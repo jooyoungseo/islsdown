@@ -6,7 +6,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of islsdown is to provide a boiler plate
+The goal of islsdown is to provide a boilerplate reproducible template
+for the International Society of the Learning Sciences (ISLS) Annual
+Meeting submissions using R Markdown.
 
 ## Installation
 
