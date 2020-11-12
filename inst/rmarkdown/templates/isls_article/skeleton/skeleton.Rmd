@@ -1,0 +1,114 @@
+---
+title: 'Title: Style "Title," Arial, 14 pt., Bold, Centered'
+author:
+- name: JooYoung Seo
+  institution: Pennsylvania State University
+  email: jooyoung@psu.edu
+- name: Timmy Chan, Joseph E. Michaelis
+  institution: University of Illinois at Chicago
+  email: tchan30@uic.edu, jmich@uic.edu
+- name: Joshua M. Rosenberg
+  institution: University of Tennessee
+  email: jmrosenberg@utk.edu
+abstract: |
+  Place one blank line before and after the abstract. Use style "Abstract," Times or Times New Roman, 10 pt., for your abstract. Indent the abstract .5 inch from the right and left margins of the paper. All text should be single-spaced. \uline{"Full justify" all text (straight margins on both left and right sides).} Paper abstracts are 150 words; poster abstracts are 75 words.
+
+keywords: maximum five keywords should be included 
+bibliography: [bib/references.bib]
+csl: apa7.csl
+knit: bookdown::render_book
+site: "bookdown::bookdown_site"
+---
+
+```{r setup, include = FALSE, echo = FALSE, purl = FALSE}
+# Load required R packages on your needs:
+#library(knitr)
+#library(rmarkdown)
+
+# Set global knitr options here:
+knitr::opts_chunk$set(fig.path = 'fig/', echo=FALSE, cache=FALSE, cache.comments=FALSE, message=FALSE, warning=FALSE, tidy="styler")
+
+# Seed for random number generation:
+set.seed(7777)
+```
+
+# General notes (Style "Heading 1" --- Arial, 12 pt, bold, first word capitalized)
+
+These are the formatting requirements for the papers that will be published in the CSCL 2017 proceedings. Your paper must conform to these guidelines so that we can have uniform appearing proceedings. Time between submission of the final copy and submitting them to the publisher is short, so submitting your paper following these guidelines is necessary for insuring your paper’s inclusion in the proceedings. It is recommended that you use the MS Word styles in this document as a template for your document.
+
+## Body text formatting (Style "Heading 2" --- Arial, 12 pt, regular, first word capitalized)
+
+The initial paragraph following a header is in style "Body Text." Use Times or Times New Roman 10 point. "Full justify" paragraph text, i.e., left and right justify. Do not indent or leave a blank line following headings. The margins for your entire paper should be 1 inch on all four sides, using A4 paper.
+
+Subsequent paragraphs are in style "Body Text First Indent." Do not leave blank lines between paragraphs. Indent the first line of each paragraph .5 inches from the left margin.
+
+*DO NOT use page numbers, running heads, or footnotes.* If you must use notes, please use endnotes, and place them immediately before the reference list. Do not use the Word processors automatic endpoint features. Refer to endnotes in text using a standard full sized numeral inside parentheses [^note1] without superscripting [^note2]. For *emphasis* in your text, use *italics*.
+
+Leave one line before each section header. This will be accomplished automatically if you used the MS Word styles in this document. Do not use more than three levels of headers.
+
+### Page length (Heading 3 --- Arial, 10 pt, regular, underlined, first word capitalized)
+
+{\color{red} Full papers may use a maximum of 8 pages; posters may use a maximum of 2 pages; short papers may use a maximum of 4 pages; symposia may use a maximum of 8 pages.} *You may not exceed the maximum.* Refer to the conference call for papers for details.
+
+### Blind review for papers and posters
+
+Papers and posters will be reviewed blind, so it is important to prepare submissions so that reviewers do not know the names of the authors. Please prepare your paper in a way that preserves author anonymity. {\color{red} *Bulleted and enumerated lists are in 10 point Times New Roman font and having a 3 pt space before and after each line. They are indented a quarter-inch on the left and have a quarter-inch hanging indent.*}
+
+* Do not include author names and institutions under the title in your submissions.
+* Avoid using phrases like "our previous work" when referring to earlier publications by the authors.
+* Remove information that may identify the authors in the acknowledgements (e.g., grant IDs).
+* Avoid providing web links to sites or other supplementary materials that may identify the authors
+
+### Extended quotes
+
+For extended quotes from source material, use Times or Times New Roman 10 pt, and indent the quote .5 inch from both the left and right margins. "Full justify" the text for the extended quote. The extended quote should be preceded and followed by one blank line.
+
+> Lorem ipsum dolor sit amet, consectetaur adipisicing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi ut aliquip ex ea commodo. (Euripedes, 1999, p. 213)
+
+### Figures and tables
+
+All figures and tables must be referred to in your text (see Table 1). Color figures may be included, but they will be printed in the proceedings in black and white, so please be sure that they will reproduce acceptably without color (see Figure 1). All figures and tables should be centered. Table captions are underlined and aligned left above the table. Figure captions are centered and placed below the figure.
+
+\begin{table}[H]
+\caption{An example of a table for the ICLS proceedings}
+
+\centering
+\begin{tabular}{c || c | c | c | c | c | c}
+\hline
+\multirow{2}{*}{index} & \multicolumn{2}{c|}{Item1}&\multicolumn{3}{c|}{Item2} & Item3 \\ \cline{2-7}
+& Item1-1 & Item1-2 & Item2-1 & Item2-2 & Item 2-3 & Item 3-1 \\ \hline \hline 
+1 & a & b & c & d & e & f \\ \hline
+2 & g & h & i & j & k & l \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=.25\textwidth]{fig/logo}
+\end{center}
+\caption{The "ICLS Nashville, TN: 2020" logo.}
+\end{figure}
+
+### Citation and reference style
+
+Use APA reference style throughout your paper and the reference section. Please refer to the Fifth Edition of the APA Publication Manual for full details and more extensive examples. Examples:
+
+> \dots promoted with the use of technology [e.g., @hawkins_tools_1987] \dots  
+> \dots @lave_cognition_1988 moves the analysis of \dots  
+> \dots Dewey (1929) called for systematic knowledge of teaching practice \dots  
+> \dots orchestrating learning in naturalistic settings [@brown_design_1992; @bruner_postscript_1999]
+
+# Acknowledgments (use Heading 1) {-}
+
+If you would like to make acknowledgments in your paper, please do so after the reference section, use Times or Times New Roman 10 pt font, "full justify" your text, and do not indent the first line of the acknowledgments.
+
+<!-- \renewcommand{\notesname}{Endnotes (use Heading 1)} %edit this line to change the text of endnotes heading. -->
+<!-- \theendnotes -->
+
+[^note1]: Place any endnotes after the main text of your paper, but before your reference list. Use Times or Times New Roman 9 pt text for your endnotes, and "full justify" the margins. Place the endnote number reference in parentheses in the left margin, using the same number as in the text of the paper.
+
+[^note2]: Use style "Endnotes", with a .25 inch "hanging"; indent and a .25 inch tab setting, as in this example.
+
+# References (use Heading 1) {-}
+
+(Note that references are in style "References," Times or Times New Roman 10 pt text, "full justified" and use a .5 inch "hanging" indent, with no spaces left between entries. Follow APA style. The MOST important thing about the reference style you use is that readers be able to locate the sources you cite! Please be especially clear in the case of references to on-line materials!)

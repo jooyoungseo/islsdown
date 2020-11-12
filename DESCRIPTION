@@ -1,18 +1,26 @@
 Package: islsdown
-Title: What the Package Does (One Line, Title Case)
+Title: Writing a Reproducible Conference Paper for the International Society of the Learning Sciences Annual Meeting in R Markdown
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    c(person("JooYoung", "Seo", role=c("aut", "cre"), email="jooyoung@psu.edu", comment = c(ORCID = "0000-0002-4064-6012")),
+    person("Timmy", "Chan", role="aut", email="tchan30@uic.edu"),
+    person("Joseph E.", "Michaelis", role="aut", email="jmich@uic.edu", comment = c(ORCID = "0000-0003-3793-3659")),
+    person("Joshua M.", "Rosenberg", role="aut", email="jmrosenberg@utk.edu", comment = c(ORCID = "0000-0003-2170-0447")),
+    person(family = "International Society of the Learning Sciences", role = c("cph")))
+Description: This package provides a reproducible R Markdown template according to the 'International Society of the Learning Sciences' (ISLS) annual meeting submission guidelines.
+License: GPL-3
 Encoding: UTF-8
+SystemRequirements: Pandoc (>= 1.17.2)
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/jooyoungseo/islsdown
 BugReports: https://github.com/jooyoungseo/islsdown/issues
+Imports: 
+    rmdfiltr,
+    bookdown (>= 0.21),
+    rmarkdown (>= 2.4),
+    xfun (>= 0.19),
+    tinytex (>= 0.12),
+    rstudioapi,
+    knitr (>= 1.22)

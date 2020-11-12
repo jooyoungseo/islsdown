@@ -1,0 +1,95 @@
+%----------------------------------------------------------------------------------------
+% The original ICLS LaTeX template has been modified by JooYoung Seo (jooyoung@psu.edu) to work with R Markdown.
+% 11/9/2020
+%----------------------------------------------------------------------------------------
+
+%-----------------------------------------------%
+% Packages arranged by : Tsz Timmy Chan	        %
+%                 Date : Apr 17th, 2020	        %
+%	See ICLSpreamble.sty for details	        %
+%	Uses biblatex-apa package for references    %
+%-----------------------------------------------%
+% File hosted on Overleaf and synced with Github
+
+\documentclass{ICLSarticle} % Custom formatting file, based on standard article class
+\usepackage{ICLSpreamble}   % Cusom commands defined here, as well as useful packages.
+%% The following packages have been added for rmarkdown compatibility (by JooYoung Seo):
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref} % Required for hyperlinks
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\def\tightlist{}
+%% JooYoung insertion ends here.
+
+\ICLStitle{$title$}
+% Work Title Here.
+
+% YOUR NAME(S) HERE 
+\author{$for(author)$$author.name$, $if(author.institution)$$author.institution$, $endif$$author.email$$sep$ \and $endfor$
+%Author Name, Institution, Email \and Author Name 2, Institution, Email%
+%
+%(if same institution, put all authors separated by commas, Institution,
+%
+%then put on new line "Email: email 1, email 2, email 3" in order of authorship)
+\vspace{-10ex}} %removes spacing after authors
+
+$if(bibliography)$
+\addbibresource{$for(bibliography)$$bibliography$$sep$,$endfor$}		% Reference file, NO SPACES in the name
+$endif$
+
+% CUSTOM PACKAGES GO HERE %
+%\usepackage{LSRIcommon}
+% CUSTOM PACKAGES GO HERE %
+
+% The following are required to work with Pandoc (inserted by JooYoung Seo):
+% Pandoc syntax highlighting
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+% JooYoung's insertion ends here.
+
+\begin{document}
+
+%====ABSTRACT AND KEYWORDS====%
+\maketitle
+$if(abstract)$
+\begin{ICLSabstract}
+%	\input{abstract} % This template includes standalone package so this works nicely
+$abstract$
+\end{ICLSabstract}
+$endif$
+$if(keywords)$
+	\ICLSkeywords{$keywords$}
+$endif$
+
+%====MAIN TEXT BELOW====%
+$body$
+
+%$if(bibliography)$
+%\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+%$endif$
+
+%\printbibliography[title={References (use Heading 1)}]
+%$if(biblatex)$
+%\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+%$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}

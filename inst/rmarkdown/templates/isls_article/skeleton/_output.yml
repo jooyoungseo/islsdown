@@ -1,0 +1,7 @@
+islsdown::isls_pdf: default
+islsdown::isls_word: default
+bookdown::epub_book: default
+bookdown::gitbook:
+  split_bib: true
+  config:
+    download: ["pdf", "word", "epub"]

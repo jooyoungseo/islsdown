@@ -1,0 +1,91 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ICLSpreamble}[2019/12/12 ICLS Common Package]
+
+%---------------------------------------%
+% Package arranged by : Tsz Timmy Chan	%
+%	Contains common settings			%
+%	Not compatible with Beamer			%
+%	Tested with ICLSarticle class		%
+%---------------------------------------%
+
+
+\RequirePackage{standalone} % Make LaTeX input cut out preamble of 
+							%	the files being inputted
+							%	making compilation of subfiles easier.
+\usepackage{endnotes}
+\let\footnote=\endnote %force all footnotes to become endnotes anyway
+\renewcommand{\makeenmark}{(\theenmark)\enspace}
+\renewcommand{\enotesize}{\fontsize{9}{9}\selectfont}
+\renewcommand{\enoteformat}{%
+\noindent
+  \leftskip=.25in
+  \makebox[0pt][r]{(\theenmark) \rule{0pt}{\dimexpr\ht\strutbox}}%
+}
+
+
+\RequirePackage[pdfborder={0 0 0}]{hyperref} %for emails
+
+%=====APA Formatting=====%
+\RequirePackage[american]{babel}					% babel for making APA work
+\RequirePackage{csquotes}
+\RequirePackage[backend=biber,style=apa]{biblatex}				% apa style for biblatex
+\DeclareLanguageMapping{american}{american-apa}	% apa spelling
+% Fix to for the redactor bug (Dec. 2019 fix)
+\AtEveryBibitem{
+  \iffieldequalstr{editortype}{redactor}
+    {\global\clearname{editor}\typeout{delete editor (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editoratype}{redactor}
+    {\global\clearname{editora}\typeout{delete editora (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editorbtype}{redactor}
+    {\global\clearname{editorb}\typeout{delete editorb (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editorctype}{redactor}
+    {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
+}
+%\setlength\bibhang{2em}
+\renewcommand\refname{REFERENCES}
+
+%=====Useful packages=====%
+		
+										%	 with rest of text
+\RequirePackage[useregional]{datetime2} % Better date/time management
+\RequirePackage{microtype}				% Handles character protrusion
+										%	and font expansion
+
+
+%=====Graphics Hardcoding=====%
+% common graphics for figures
+\RequirePackage{graphicx} 	% include graphics
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.svg,.gif} % common file types
+\RequirePackage{tikz}       % Enables Tikz drawing of diagrams
+\RequirePackage{mathrsfs}   % Provides a \mathscr command (GeoGebra)
+\usetikzlibrary{arrows}		% Arrows used for GeoGebra 
+\RequirePackage{wrapfig} 
+\RequirePackage{cleveref}	% Refs include "fig." or "table"
+\RequirePackage{float}
+
+%=====Flashcards=====%
+\providecommand{\subject}{}		% blank subject for flashcards
+\providecommand{\Reference}{}	% blank reference for flashcards
+
+
+
+%=====Custom symbols=====%
+
+%---Danger sign---%
+\RequirePackage{stackengine}
+\RequirePackage{scalerel}
+\newcommand\dangersign[1][2ex]{%
+  \renewcommand\stacktype{L}%
+  \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny\bfseries !}}{#1}%
+}
+
+%=====Custom enviornments=====%
+
+
+%---
+\RequirePackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{multirow}
+
+\usepackage{float}
+\renewenvironment{proof}{{\noindent\bfseries Proof.}}{}

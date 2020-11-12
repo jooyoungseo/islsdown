@@ -1,0 +1,4 @@
+Title: Paper Project using islsdown
+Binding: islsdown_skeleton
+OpenFiles: README.md, _bookdown.yml, _output.yml, index.Rmd
+Icon: ISLS_logofull.png
