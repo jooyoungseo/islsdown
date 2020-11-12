@@ -6,40 +6,86 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of islsdown is to …
+The goal of islsdown is to provide a boiler plate
 
 ## Installation
 
-You can install the released version of islsdown from
-[CRAN](https://CRAN.R-project.org) with:
+### Package Installation
 
-    install.packages("islsdown")
+`islsdown` is currently under development on GitHub. Please install and
+test the package as follows:
+
+    if(!require(remotes)) {
+    install.packages("remotes")
+    }
+
+    remotes::install_github('jooyoungseo/islsdown')
+
+### TeX Installation
+
+While not required for installation (as other LaTeX installations will
+likely also suffice), we recommend the use of the
+[{tinytex}](https://yihui.org/tinytex/) R package and associated LaTeX
+installation.
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use `islsdown` package.
+While other formats are usable, `pdf` output is fully supported at this
+moment.
+
+### Loading the package
 
     library(islsdown)
-    ## basic example code
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+### For RStudio users
 
-    summary(cars)
-    #>      speed           dist       
-    #>  Min.   : 4.0   Min.   :  2.00  
-    #>  1st Qu.:12.0   1st Qu.: 26.00  
-    #>  Median :15.0   Median : 36.00  
-    #>  Mean   :15.4   Mean   : 42.98  
-    #>  3rd Qu.:19.0   3rd Qu.: 56.00  
-    #>  Max.   :25.0   Max.   :120.00
+For RStudio users, as long as `islsdown` is installed, we recommend to
+create a new project which contains the file used for the contents of
+the manuscript (in `index.Rmd`, described more below) and other files
+used to render the file.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
+1.  From within RStudio, select “File” -&gt; “New Project” -&gt; “New
+    Directory” and then select the *ISLS Annual Meeting* (`islsdown`)
+    template.
 
-You can also embed plots, for example:
+2.  Next, give your new directory a name, such as `my-isls-paper`.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+3.  Then, edit the `index.Rmd` document, which should automatically be
+    open, but which can always be opened by selecting the file from its
+    location in the “Files” pane of RStudio. More instructions on
+    editing the `index.Rmd` file are provided in the “Using the template
+    (index.Rmd)” section.
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub!
+### For non-RStudio users
+
+For non-RStudio users (or those looking to use the command line), you
+may create a project template in the current path with the following
+function:
+
+    islsdown::islsdown_skeleton("my-isls-paper")
+
+Then, edit the `index.Rmd` file. More instructions on editing the
+`index.Rmd` file are provided in the “Using the template (index.Rmd)”
+section.
+
+## Rendering a PDF (or gitbook or Word) document from the template
+
+Render the template to a document by clicking the “Knit” button at the
+top of the `index.Rmd` document.
+
+The result should be a PDF document which appears like the document
+below.
+
+To render a document to *a different output type* (other than a PDF),
+click the down arrow to the right of the “Knit” button, and select
+either the gitbook or Word document format.
+
+# To-Do List
+
+-   [ ] Fully test `islsdown::isls_pdf()` format.
+-   [ ] Customize `islsdown::isls_word()` format.
+-   [ ] Update `README`.
+-   [ ] Write a simple vignette.
+-   [ ] Submit the package to CRAN.
+-   [ ] Write tutorial proposal for ISLS 2021.
