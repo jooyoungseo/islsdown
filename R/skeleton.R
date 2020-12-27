@@ -3,8 +3,8 @@ islsdown_skeleton <- function(path) {
 
   # ensure directory exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(path, "bib"), recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(path, "fig"), recursive = TRUE, showWarnings = FALSE)
+  dir.create(file.path(path, "bib"), recursive = TRUE, showWarnings = FALSE)
+  dir.create(file.path(path, "fig"), recursive = TRUE, showWarnings = FALSE)
 
   # copy 'resources' folder to path
   resources <- islsdown_file("rmarkdown", "templates", "isls_article", "skeleton")

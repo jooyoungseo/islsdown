@@ -4,7 +4,6 @@
 #' @export
 
 isls_pdf <- function(..., pandoc_args = NULL) {
-
   isls_pdf_format <- bookdown::pdf_book(..., number_sections = FALSE, template = find_resource("isls_article", "template.tex"), keep_tex = TRUE, pandoc_args = c(
     "--metadata", "citeproc=false",
     rmdfiltr::add_wordcount_filter(rmdfiltr::add_replace_ampersands_filter(rmdfiltr::add_citeproc_filter(args = NULL))),
